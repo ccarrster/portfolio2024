@@ -6,58 +6,43 @@ function App() {
     {
       start: new Date('1991-09-02'),
       end: new Date('1992-07-30'),
-      name: 'Computer Lab Assistant',
+      name: 'Computer Lab Assistant - Greenglade Elementry School',
       description: 'Helped tuotor students in the Apple IIe and Mac lab',
       category: 'volunteer'
     },
     {
       start: new Date('1994-09-02'),
       end: new Date('1996-07-30'),
-      name: 'Computer Club Member',
+      name: 'Computer Club Member - North Saanich Middle School',
       description: 'Helped tuotor students in the Mac labs, experiemented with Hypercard, FTP',
       category: 'volunteer'
     },
     {
       start: new Date('1997-09-02'),
-      end: new Date('1998-07-30'),
-      name: 'Computer Science 11, Drafting',
-      description: 'Learned Pascal, Claris Works, CAD',
+      end: new Date('2000-07-30'),
+      name: 'Computer Science 11, Drafting - Parkland High School',
+      description: 'Learned Pascal, Claris Works, CAD, Computer Science 12, Physics 11, Judo, Entreprenurship, Math 12, Physics 12',
       category: 'education'
     },
-    {
-      start: new Date('1998-09-02'),
-      end: new Date('1999-07-30'),
-      name: 'Computer Science 12, Physics 11, Judo',
-      description: 'Learned Pascal, HTML, JavaScript',
-      category: 'education'
-    },
-    {
-      start: new Date('1998-09-02'),
-      end: new Date('1999-07-30'),
-      name: 'Entreprenurship, Math 12, Physics 12, Judo',
-      description: 'With a partner setup a Pizza day when the cafeteria was closed. Negociated with Panago to have them open for lunch just for us. Printed, and cut pre-order forms. Used all pre-order profits to order extra pizzas. Sold every pizza. Made $174 profit.',
-      category: 'education'
-    }
-    ,
     {
       start: new Date('1996-09-02'),
       end: new Date('2000-07-30'),
       name: 'Fast Times Model Car Club',
-      description: 'Designed, build, sanded, painted, bondoed, polished, raced wooden/metal model cars. The last year I was a mentor/volunteer. Each year ended in a weekend camp.',
+      description: 'Designed, build, sanded, painted, bondoed, polished, raced wooden/metal model cars. I made a kit hot rod, superbird, semi truck, spider, battle tank and a station wagon. I won best looking in the heavy category for a semi truck. I won first in racing for a station wagon. The last year I was a mentor/volunteer. Each year ended in a weekend camp.',
       category: 'volunteer'
     },
     {
       start: new Date('1998-08-02'),
       end: new Date('1998-08-09'),
       name: 'SALTS small boat rowing/sailing trip',
-      description: 'Rowed, sailed, learned knots, setup camp, swam and it rained for 7 of the 9 days in an open boat.',
+      description: 'Rowed, sailed, learned knots, setup camp, swam and it rained for 7 of the 9 days in an open boat. Some self discovery and I am no longer afraid of getting wet.',
       category: 'education'
     },
     {
       start: new Date('1999-08-02'),
       end: new Date('1999-08-09'),
       name: 'Starting Point - Volunteering',
-      description: 'Ran a cyber cafe for a week with a friend while the owners had a family emergency.',
+      description: 'Ran a cyber cafe for a week with a friend while the owners had a family emergency. Also worked on creating a Druid Quake Mod with friends. I focused on making the maps.',
       category: 'volunteer'
     },
     {
@@ -232,9 +217,93 @@ function App() {
       name: 'Indie Game Development P2P',
       description: 'Work on and demo games, annual game dev challenge.',
       category: 'user group'
+    },
+    {
+      start: new Date(),
+      end: null,
+      name: 'MobileWrx',
+      description: 'Created a mobile app for Blackberry that displayed barcodes for couponing and event ticketing.',
+      category: 'founder'
+    },
+    {
+      start: new Date(),
+      end: null,
+      name: 'GrabOp',
+      description: 'Created a Php, MySQL, webapp for the gig economy.',
+      category: 'founder'
+    },
+    {
+      start: new Date(),
+      end: null,
+      name: 'REES',
+      description: 'Created a service recording and reporting stand alone application for non profit clients using Java.',
+      category: 'volunteer'
+    },
+    {
+      start: new Date(),
+      end: null,
+      name: 'Basics',
+      description: 'Created a searchable filterable web interface for product and sales data using PHP, MySQL, HTML, CSS, jQuery, Gitlab.',
+      category: 'contractor'
+    },
+    {
+      start: new Date(),
+      end: null,
+      name: 'Victoria Motorcycle Salvage',
+      description: 'Created a searchable filterable web interface for motorcycle parts using an Access database.',
+      category: 'contractor'
+    },
+    {
+      start: new Date(),
+      end: null,
+      name: 'Rockstar Music',
+      description: 'Created a custom event calendar from an API that was returning HTML.',
+      category: 'contractor'
+    },
+    {
+      start: new Date(),
+      end: null,
+      name: 'Georgian Bay Metis Council',
+      description: 'Helped customize existing WordPress website. Tutored staff on how to make future changes.',
+      category: 'contractor'
+    },
+    {
+      start: new Date(),
+      end: null,
+      name: 'Barrie Computer and Technology Club',
+      description: 'A group of 10 to 15 talking about new software and presenting to each other. Lot of Q and A about basic computer skills.',
+      category: 'user group'
+    },
+    {
+      start: new Date(),
+      end: null,
+      name: 'Midland Makers',
+      description: 'A group of crafters and engineers that meet up around the Midland Library Makerspace.',
+      category: 'user group'
+    },
+    {
+      start: new Date(),
+      end: null,
+      name: 'South Georgian Bay Amateur Radio Club',
+      description: 'A group of amature radio operators that maintain local repeaters and gather for a monthly meal.',
+      category: 'user group'
+    },
+    {
+      start: new Date(),
+      end: null,
+      name: 'MLH Hackathons',
+      description: 'I volunteer as a mentor and teach lessons at hackathons. I float around various teams helping them get unstuck. I tought lessons on retaining information in a web app.',
+      category: 'volunteer'
+    },
+    {
+      start: new Date(),
+      end: null,
+      name: 'Conestoga College Kitchener',
+      description: 'I volunteer as a computer science toutor teaching C#, presenting skills and interviewing skills.',
+      category: 'volunteer'
     }
   ];
-  //Categories hackathon, job, contractor, founder/co-founder, education, volunteering, user groups
+  
   const categories = Array.from(new Set(events.map((event) => event.category )));
   return (
     <div className="App">
