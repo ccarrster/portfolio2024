@@ -32,6 +32,10 @@ body {
   color: #61dafb;
 }
 
+nav{
+  margin: 20px;
+}
+
 .navlink{
   padding: 30px;
   font-size: 40px;
