@@ -1,7 +1,133 @@
 import './App.css';
 import { Link } from "react-router-dom";
+import { useState, useEffect } from 'react';
+
+const logos = ["1069827.jpg",
+  "1280px-PHPUnit_Logo.svg.png",
+  "1994-to-today-Fedex-logo-min-1024x576.png",
+  "1C5C6027248EC8976C56C495782CF896B3353FDA.jpeg",
+  "1_e0hDmiO7rx40JfodzPPKGA.webp",
+  "2560px-Ruby_On_Rails_Logo.svg.png",
+  "317I7LHK+nL._SY445_SX342_.jpg",
+  "31pk7DxDsxL.jpg",
+  "41+u6Vm1DrL._SL350_.jpg",
+  "41bOkXnNBjL._SY445_SX342_.jpg",
+  "41GVM8S40TL._AC_UF1000,1000_QL80_.jpg",
+  "41iZulVq18L._SY445_SX342_.jpg",
+  "41rsBGaE1KL._SY445_SX342_.jpg",
+  "511cVq13clL._SY445_SX342_.jpg",
+  "518B8Q32VVL._AC_UF1000,1000_QL80_.jpg",
+  "51EyaJeebHL._AC_UF1000,1000_QL80_.jpg",
+  "51Mx2wNFgKL._SY445_SX342_.jpg",
+  "51nL96Abi1L.jpg",
+  "51P060lZSEL._AC_UF894,1000_QL80_.jpg",
+  "51TywQ-wMmS._SL500_.jpg",
+  "61-+RJemWdL._AC_UF1000,1000_QL80_.jpg",
+  "61BFOf9Ap-L._AC_UF1000,1000_QL80_.jpg",
+  "61GzazUmKyL._AC_UF1000,1000_QL80_.jpg",
+  "61jC09nUHxL._AC_UF1000,1000_QL80_.jpg",
+  "61Jdrn9cfpL._AC_UF1000,1000_QL80_.jpg",
+  "61JiMzCssOL._AC_UF894,1000_QL80_.jpg",
+  "61LJaDHdPKL._AC_UF1000,1000_QL80_.jpg",
+  "61o93lrQ1ZL._AC_UF1000,1000_QL80_.jpg",
+  "61q7qV49m+L._AC_UF1000,1000_QL80_.jpg",
+  "61ztlXgCmpL._AC_UF1000,1000_QL80_.jpg",
+  "6CD6967EAA4CF396F16E11589C067CC586739986.jpeg",
+  "71A4igyepNL._AC_UF1000,1000_QL80_.jpg",
+  "71BJJdpOKzL._AC_UF1000,1000_QL80_.jpg",
+  "71TGolfP8fL._AC_UF1000,1000_QL80_.jpg",
+  "81bSa9px6qL._AC_UF1000,1000_QL80_.jpg",
+  "840.jpg",
+  "852968.jpg",
+  "874086.png",
+  "91sh+QdzfCL._AC_UF1000,1000_QL80_.jpg",
+  "91uFdkCJmAL._AC_UF1000,1000_QL80_.jpg",
+  "alberta ministry of forests and parks.jpg",
+  "algh_hu113d2c3e50fd75c09b6733c171b149ce_93961_250x0_resize_q75_box.jpg",
+  "Apache_HTTP_server_logo_(2019-present).svg.png",
+  "apache_tomcat_logo_icon_167851.webp",
+  "arius.png",
+  "bc education.png",
+  "BC_FLNR_H_RGB_pos.png",
+  "beanstream.png",
+  "c-sharp-open-source.png",
+  "camosun logo.png",
+  "Canada-Post-logo.png",
+  "canadian_space_agency_logo_2023_small.jpg",
+  "cober.png",
+  "Company_logo_of_ScotiaMocatta.jpg",
+  "csss logo.png",
+  "designing.gif.450x600_q75_autocrop_crop-scale_upscale.jpg",
+  "dhl-1.svg",
+  "download (1).jfif",
+  "download (2).jfif",
+  "download (3).jfif",
+  "download.jfif",
+  "free-ruby-47-1175102.webp",
+  "git.jpg",
+  "Google-Cloud-Platform-GCP-Logo.png",
+  "Google_Maps_Logo_2020.svg.png",
+  "GrabOp-Final-Logo-01-e1627545901270.png",
+  "html.png",
+  "images (1).jfif",
+  "images (1).png",
+  "images (2).png",
+  "images (3).png",
+  "images (4).png",
+  "images (5).png",
+  "images.jfif",
+  "images.png",
+  "Java-Logo.png",
+  "Javascript_badge.svg.png",
+  "Jenkins_logo_with_title.svg.png",
+  "jrpm.jpg",
+  "logo-guide-logos-1.svg",
+  "macOS-Logo.png",
+  "meta.png",
+  "Microsoft-Office-logo.png",
+  "microsoft-sql-server-logo.svg",
+  "mobilewrx.png",
+  "Moneris_Moneris_partners_with_Wix_to_provide_Canadian_businesses.jpg",
+  "Mysql_logo.png",
+  "Oracle_logo.svg.png",
+  "Paypal_2014_logo.png",
+  "Perl_language_logo.svg",
+  "php.png",
+  "PhpStorm_Icon.svg.png",
+  "prj.jpg",
+  "Python_logo_and_wordmark.svg.png",
+  "react-original-wordmark-icon-840x1024-vhmauxp6.png",
+  "Selenium_Logo.png",
+  "SelkirkLogo.png",
+  "The_C_Programming_Language_logo.svg.png",
+  "tsgit_hu09204dda6e2c959a4cc6bd46a61e0f67_2774232_250x0_resize_q75_box.jpg",
+  "tulip.png",
+  "Ubuntu-logo-2022.svg.png",
+  "UPS-logo.png",
+  "vscode.png",
+  "well.png",
+  "Wikimedia_logo_text_RGB.svg.png"];
 
 function App() {
+
+  const [logoIndexes, setLogoIndexes] = useState([0, 1, 2, 3, 4, 5]);
+
+  useEffect(() => {
+    const timeoutId = setTimeout(() => {
+      let newIndexes = [];
+      while(newIndexes.length < 6){
+        let newIndex = Math.floor(Math.random() * logos.length);
+        if(!newIndexes.includes(newIndex)){
+          newIndexes.push(newIndex);
+        }
+      }
+      setLogoIndexes(newIndexes)
+    }, 10000);
+
+    return () => clearTimeout(timeoutId);
+  }, [logoIndexes]);
+  
+
   const events = [
     {
       start: new Date('1991-09-02'),
@@ -20,8 +146,8 @@ function App() {
     {
       start: new Date('1997-09-02'),
       end: new Date('2000-07-30'),
-      name: 'Computer Science 11, Drafting - Parkland High School',
-      description: 'Learned Pascal, Claris Works, CAD, Computer Science 12, Physics 11, Judo, Entreprenurship, Math 12, Physics 12',
+      name: 'Parkland High School',
+      description: 'Learned Pascal, Claris Works, CAD, Computer Science 12, Physics 11, Judo, Entreprenurship, Math 12, Physics 12, Work experience in 3 IT shops',
       category: 'education'
     },
     {
@@ -41,7 +167,7 @@ function App() {
     {
       start: new Date('1999-08-02'),
       end: new Date('1999-08-09'),
-      name: 'Starting Point - Volunteering',
+      name: 'Starting Point',
       description: 'Ran a cyber cafe for a week with a friend while the owners had a family emergency. Also worked on creating a Druid Quake Mod with friends. I focused on making the maps.',
       category: 'volunteer'
     },
@@ -315,6 +441,7 @@ function App() {
       </section>
       <section>
         <h1>Timeline</h1>
+        <div className='events'>
         {events.map((event) => {
           return(
           <div className='event' key={event.name + event.start}>
@@ -327,6 +454,17 @@ function App() {
           </div>
           );
         })}
+        </div>
+      </section>
+      <section>
+        <h1>Books, Tools and Clients</h1>
+        <div id='logos' className='logos'>
+          {
+            logoIndexes.map((logoIndex) => {
+              return <img className='book' key={logoIndex} alt="book, tool, clients" src={'/logos/' + logos[logoIndex]}/>
+            })
+          }
+        </div>
       </section>
     </div>
   );
