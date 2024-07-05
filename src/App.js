@@ -170,7 +170,7 @@ function App() {
       end: new Date('2000-07-30'),
       name: 'Parkland High School',
       description: 'Learned Pascal, Claris Works, CAD, Computer Science 12, Physics 11, Judo, Entreprenurship, Math 12, Physics 12, Work experience in 3 IT shops',
-      category: 'education'
+      category: 'Education'
     },
     {
       start: new Date('1999-08-02'),
@@ -184,7 +184,7 @@ function App() {
       end: new Date('2005-06-02'),
       name: 'Camosun College - Computer Systems Technlogy Diploma - with Coop',
       description: 'Courses on math, entreprenurship, technical writing, object oriented programming, data warehousing, Python, Java, Perl, C, C++, Oracle, Flash, HTML, CSS, Compiler(Craps), Scheme, Networking, Real-time Programming, Graphics. Capstone project with 2 team mates displaying 3 axis acceleration on a Pocket PC, connecting wirelessly over a serial connection using EvC++. I started a chess club. I read the pragmatic programmer, C guide, Design Patterns',
-      category: 'education'
+      category: 'Education'
     },
     {
       start: new Date('2004-11-02'),
@@ -476,8 +476,6 @@ function App() {
       url: 'Resume Chris Carr.pdf',
       tip: 'Resume'
     }
-
-    
   ]
 
   const categories = Array.from(new Set(events.map((event) => event.category )));
@@ -495,11 +493,15 @@ function App() {
         })}
       </section>
       <nav>
-        {categories.map((category) => <a href={'#' + category} key={category} to={category}>{category}</a>)}
+        {categories.map((category) => <a href={'#' + category} key={category} className='navlink' to={category}>{category}</a>)}
       </nav>
       <section id='header'>
         <h1>Chris Carr's Developer Portfolio</h1>
+        <h2>Solving problems with maintainable software</h2>
         <img src='profilephoto.png' alt='headshot'/>
+        <p>Send me an email: <a href='mailto:ccarrster@gmail.com'>ccarrster@gmail.com</a> and we can book a call or meeting.</p>
+        <p>I am actively looking for full stack development work(employment or contract) remote or hybrid. I am a Canadian citizen and I live in Penetanguishene, Ontario, Canada.</p>
+        <p>I enjoy helping startups, mentoring and attending hackathons.</p>
       </section>
       {categories.map((category) => {
         return(
@@ -537,6 +539,13 @@ function App() {
             })
           }
         </div>
+      </section>
+      <section id='footer'>
+        {contacts.map((contact) => {
+          return(
+            <a href={contact.url} target='_blank'><img className='contact' src={'icons/' + contact.icon} alt={contact.tip}/></a>
+          )
+        })}
       </section>
     </div>
   );
