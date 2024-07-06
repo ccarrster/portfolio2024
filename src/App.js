@@ -88,7 +88,7 @@ function App() {
       name: 'Basics',
       description: 'Created a searchable filterable web interface for product and sales data using PHP, MySQL, HTML, CSS, jQuery, Gitlab.',
       category: 'Contractor',
-      image: 'basics.jpg',
+      image: 'basics-office-supplies-canada-1-max.jpg',
       url: 'https://beatties.com/'
     },
     {
