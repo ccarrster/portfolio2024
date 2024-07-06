@@ -117,7 +117,7 @@ function App() {
       end: new Date('2000-07-30'),
       name: 'Parkland High School',
       description: 'Learned Pascal, Claris Works, CAD, Computer Science 12, Physics 11, Judo, Entreprenurship, Math 12, Physics 12, Work experience in 3 IT shops',
-      category: 'Education'
+      category: 'Student'
     },
     {
       start: new Date('1999-08-02'),
@@ -131,7 +131,7 @@ function App() {
       end: new Date('2005-06-02'),
       name: 'Camosun College - Computer Systems Technlogy Diploma - with Coop',
       description: 'Courses on math, entreprenurship, technical writing, object oriented programming, data warehousing, Python, Java, Perl, C, C++, Oracle, Flash, HTML, CSS, Compiler(Craps), Scheme, Networking, Real-time Programming, Graphics. Capstone project with 2 team mates displaying 3 axis acceleration on a Pocket PC, connecting wirelessly over a serial connection using EvC++. I started a chess club. I read the pragmatic programmer, C guide, Design Patterns',
-      category: 'Education',
+      category: 'Student',
       image: 'camosun logo.png',
       url: 'https://camosun.ca/'
     },
@@ -160,7 +160,7 @@ function App() {
       end: new Date('2010-07-02'),
       name: 'Vancouver Island Java Users Group Member',
       description: 'Attended several monthly meetings with guest speakers focused on Java and other technlologies.',
-      category: 'Group'
+      category: 'Peer'
     },
     {
       start: new Date('2005-06-02'),
@@ -258,7 +258,7 @@ function App() {
       end: null,
       name: 'Guelph PHP User Group',
       description: 'Guelph, Kitchener, Waterloo PHP User Group. Hosted by Well at the begining and Vehikl. Usually a guest speaker, and usually about PHP. Have done group coding sessions and some meetings are social.',
-      category: 'Group',
+      category: 'Peer',
       url: 'https://www.meetup.com/_gpug_/'
     },
     {
@@ -266,7 +266,7 @@ function App() {
       end: null,
       name: 'DevHouse Waterloo',
       description: 'A place to demo projects, anyone can demonstrate, sometimes there is a time limit. Food, drinks and social afterwards. Went online during Covid.',
-      category: 'Group',
+      category: 'Peer',
       url: 'https://www.meetup.com/devhouse-waterloo/'
     },
     {
@@ -274,21 +274,21 @@ function App() {
       end: new Date('2013-11-05'),
       name: 'Startup Drinks',
       description: 'Tech startup social at Chansaw in Kitchener',
-      category: 'Group'
+      category: 'Peer'
     },
     {
       start: new Date('2015-02-14'),
       end: new Date('2016-09-08'),
       name: 'The Front Edge',
       description: 'A web frontend focused meetup. I gave a talk on hackathons at one meeting. Hosted by Axonify.',
-      category: 'Group'
+      category: 'Peer'
     },
     {
       start: new Date('2013-11-11'),
       end: new Date('2019-09-05'),
       name: 'HackerNest Kitchener-Waterloo',
       description: 'A tech social hosted by a different business each time. This group is global and has local organizations. Drinks and snacks provided. Anouncements in the middle for other tech events.',
-      category: 'Group',
+      category: 'Peer',
       image: 'headerlogo.png',
       url: 'https://hackernest.com/'
     },
@@ -297,7 +297,7 @@ function App() {
       end: null,
       name: 'UX Waterloo',
       description: 'User iterface focused talks. Sometimes atendees present projects, other times group work. They hold and annual UX confrence.',
-      category: 'Group',
+      category: 'Peer',
       url: 'https://www.meetup.com/uxwaterloo-p2p/'
     },
     {
@@ -305,7 +305,7 @@ function App() {
       end: null,
       name: 'Agile/Lean P2P',
       description: 'A wide variety of topics. Sometimes interactive. Usually a speaker. Hosted in different public spaces.',
-      category: 'Group',
+      category: 'Peer',
       url: 'https://www.meetup.com/agile-lean-p2p/'
     },
     {
@@ -313,7 +313,7 @@ function App() {
       end: null,
       name: 'Indie Game Development P2P',
       description: 'Work on and demo games, annual game dev challenge.',
-      category: 'Group',
+      category: 'Peer',
       url: 'https://www.meetup.com/indie-game-developmentp2p/'
     },
     {
@@ -371,7 +371,7 @@ function App() {
       end: null,
       name: 'Barrie Computer and Technology Club',
       description: 'A group of 10 to 15 talking about new software and presenting to each other. Lot of Q and A about basic computer skills.',
-      category: 'Group',
+      category: 'Peer',
       image: 'bug.jpg',
       url: 'https://barrietechnology.weebly.com/'
     },
@@ -380,7 +380,7 @@ function App() {
       end: null,
       name: 'Midland Makers',
       description: 'A group of crafters and engineers that meet up around the Midland Library Makerspace.',
-      category: 'Group',
+      category: 'Peer',
       image: 'maker.jfif',
       url: 'https://midlandlibrary.com/the-mpl-makerplace/'
     },
@@ -389,7 +389,7 @@ function App() {
       end: null,
       name: 'South Georgian Bay Amateur Radio Club',
       description: 'A group of amature radio operators that maintain local repeaters and gather for a monthly meal.',
-      category: 'Group',
+      category: 'Peer',
       image: 'radio.jfif',
       radio: 'https://www.qsl.net/sgbarc/'
     },
