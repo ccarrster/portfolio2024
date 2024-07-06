@@ -391,7 +391,7 @@ function App() {
       description: 'A group of amature radio operators that maintain local repeaters and gather for a monthly meal.',
       category: 'Peer',
       image: 'radio.jfif',
-      radio: 'https://www.qsl.net/sgbarc/'
+      url: 'https://www.qsl.net/sgbarc/'
     },
     {
       start: new Date('2017-01-01'),
@@ -704,7 +704,7 @@ function App() {
           )
         })}
       </section>
-      <nav>
+      <nav className='mainnav'>
         {categories.map((category) => <a href={'#' + category} key={category} className='navlink' to={category}>{category}</a>)}
       </nav>
       <section id='header'>
@@ -771,6 +771,27 @@ function App() {
           }
         </div>
       </section>
+
+      <section id='projects'>
+        <h1>Projects</h1>
+        <div className='projects'>
+        {projects.map((project) => {
+          return (
+            <div className='project'>
+              <h2>{project.projectName}</h2>
+              <p>{project.description}</p>
+              {project.image && <p><img src={'projects/' + project.image} alt='project'/></p>}
+              {project.demourl && <a href={project.demourl} target='_blank'><p>Try it out: {project.demourl}</p></a>}
+              {project.source && <a href={project.source} target='_blank'><p>Look at the code: {project.source}</p></a>}
+              {project.externalurl && <a href={project.externalurl} target='_blank'><p>Inspired by: {project.externalurl}</p></a>}
+              {project.video && <a href={project.video} target='_blank'><p>Watch a video: {project.video}</p></a>}
+            </div>
+          )
+        }
+        )}
+        </div>
+      </section>
+
       <section id='footer'>
         {contacts.map((contact) => {
           return(
