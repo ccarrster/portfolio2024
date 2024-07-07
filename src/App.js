@@ -54,6 +54,7 @@ const logos = ["1280px-PHPUnit_Logo.svg.png",
 function App() {
 
   const [logoIndexes, setLogoIndexes] = useState([0, 1, 2, 3, 4, 5]);
+  const [moreCategory, setMoreCategory] = useState([]);
 
   useEffect(() => {
     const timeoutId = setTimeout(() => {
@@ -70,6 +71,14 @@ function App() {
     return () => clearTimeout(timeoutId);
   }, [logoIndexes]);
   
+
+  function toggleMoreCategory(category){
+    if(moreCategory.includes(category.category)){
+      setMoreCategory(moreCategory.filter((current) => current == category.category ? false : true))
+    } else {
+      setMoreCategory([...moreCategory, category.category]);
+    }
+  }
 
   let events = [
     {
@@ -694,6 +703,7 @@ function App() {
 
   let sortedEvents = events.sort((a, b) => b.start - a.start);
   
+  const years = new Date().getFullYear() - 1999;
   
   return (
     <div className="App">
@@ -705,23 +715,31 @@ function App() {
         })}
       </section>
       <nav className='mainnav'>
-        {categories.map((category) => <a href={'#' + category} key={category} className='navlink' to={category}>{category}</a>)}
+        {[...categories, 'Projects'].map((category) => <a href={'#' + category} key={category} className='navlink' to={category}>{category}</a>)}
       </nav>
       <section id='header'>
         <h1>Chris Carr's Developer Portfolio</h1>
-        <h2>Solving problems with maintainable software</h2>
+        <h2>Creating maintainable software to solve problems for {years} years.</h2>
         <img src='profilephoto.png' alt='headshot'/>
-        <p>Send me an email: <a href='mailto:ccarrster@gmail.com'>ccarrster@gmail.com</a> and we can book a call or meeting.</p>
+        <div className='text'>
+        <p><button className='mailbutton' onClick={() => window.location.href = 'mailto:ccarrster@gmail.com'}>Send me an email</button> <a href='mailto:ccarrster@gmail.com'>ccarrster@gmail.com</a> and we can book a call or meeting.</p>
         <p>I am actively looking for full stack development work(employment or contract) remote or hybrid. I am a Canadian citizen and I live in Penetanguishene, Ontario, Canada.</p>
         <p>I enjoy helping startups, mentoring and attending hackathons.</p>
+        </div>
       </section>
+      
       {categories.map((category) => {
+        let eventIndex = 0;
         return(
           <section id={category}>
             <h1>{category} Timeline</h1>
             <div className='events'>
             {sortedEvents.map((event) => {
               if(event.category !== category){
+                return null;
+              }
+              eventIndex += 1;
+              if(eventIndex > 6 && !moreCategory.includes(category)){
                 return null;
               }
               return(
@@ -735,19 +753,20 @@ function App() {
                 }
               </div>
               );
-            })}
+            })}            
             </div>
+            {!moreCategory.includes(category) && eventIndex > 6 && <button onClick={() => toggleMoreCategory({category})}>Show all {category} information</button>}
           </section>
         );
       }
         
       )}
       <section>
-        <h1>My Tech Library</h1>
+        <h1>My Tech Library Favorites</h1>
         <div className='books'>
         {books.map((book) => {
           return (
-            <div className='booklink'>
+            <div key={book.title} className='booklink'>
               <a href={book.url}>
               <h2>{book.title}</h2>
               <p>{book.subtitle}</p>
@@ -772,15 +791,15 @@ function App() {
         </div>
       </section>
 
-      <section id='projects'>
-        <h1>Projects</h1>
+      <section id='Projects'>
+        <h1>Personal Projects</h1>
         <div className='projects'>
         {projects.map((project) => {
           return (
-            <div className='project'>
+            <div key={project.projectName} className='project'>
               <h2>{project.projectName}</h2>
               <p>{project.description}</p>
-              {project.image && <p><img src={'projects/' + project.image} alt='project'/></p>}
+              {project.image && <img src={'projects/' + project.image} alt='project'/>}
               {project.demourl && <a href={project.demourl} target='_blank'><p>Try it out: {project.demourl}</p></a>}
               {project.source && <a href={project.source} target='_blank'><p>Look at the code: {project.source}</p></a>}
               {project.externalurl && <a href={project.externalurl} target='_blank'><p>Inspired by: {project.externalurl}</p></a>}

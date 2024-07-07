@@ -148,6 +148,99 @@ nav{
   max-height: 100px;
 }
 
+.project {
+  padding: 10px;
+}
+
+.text{
+  border: 4px solid black;
+  border-radius: 5px;
+  background-color: white;
+  margin: 50px;
+  font-size: 20px;
+}
+
+
+.cloud{
+  z-index: -1;
+  position: fixed;
+  max-width: 200px;
+  opacity: 0.5;
+  z-index: 1;
+  animation: cloudAnimation 60s;
+  animation-direction: normal;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes cloudAnimation {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: 85%;
+  }
+}
+
+.hills{
+  z-index: -1;
+  position:fixed;
+  bottom: 0px;
+  right: 0px;
+  width: 100%;
+  opacity: 0.5;
+}
+
+.barn{
+  z-index: -1;
+  position: fixed;
+  bottom: 100px;
+  left: 100px;
+}
+
+.sheep{
+  z-index: -1;
+  position: fixed;
+  
+  animation: sheepAnimation 60s;
+  animation-direction: normal;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.mailbutton{
+  background-color: lime;
+  padding: 10px;
+  border-radius: 30px;
+  border-bottom: 5px solid black;
+  border-right: 5px solid black;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+@keyframes sheepAnimation {
+  0% {
+    bottom: 0px;
+    left: 0px;
+  }
+  20% {
+    bottom: -200px;
+    left: -100px;
+  }
+  30% {
+    bottom: 0px;
+    left: 200px;
+  }
+  50% {
+    bottom: 100px;
+    left: 30px;
+  }
+  100% {
+    bottom: 0px;
+    left: 0%;
+  }
+}
+
 .book{
   max-width: 250px;
   max-height: 250px;
