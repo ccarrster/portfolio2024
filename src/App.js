@@ -150,6 +150,7 @@ function App() {
       name: 'HackerRank - Software Development Certifications',
       description: 'Problem Solving (Basic), Java (Basic), JavaScript (Basic), SQL (Basic), SQL (Intermediate), SQL (Advanced), React (Basic), Node (Basic), Rest API (Intermediate), CSS (Basic), JavaScript (Intermedate), Frontend Developer (React), Software Engineer, Software Engineer Intern',
       category: 'Student',
+      image: 'HackerRank.png',
       url: 'https://www.hackerrank.com/profile/ccarrster'
     },
     {
@@ -158,6 +159,7 @@ function App() {
       name: 'W3 Schools Certified TypeScript Developer - Professional Level',
       description: 'Certified TypeScript Developer - Professional Level',
       category: 'Student',
+      image: 'W3Schools.png',
       url: 'https://verify.w3schools.com/1P181PB29D'
     },
     {
