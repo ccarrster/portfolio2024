@@ -145,6 +145,22 @@ function App() {
       url: 'https://camosun.ca/'
     },
     {
+      start: new Date('2024-01-01'),
+      end: null,
+      name: 'HackerRank - Software Development Certifications',
+      description: 'Problem Solving (Basic), Java (Basic), JavaScript (Basic), SQL (Basic), SQL (Intermediate), SQL (Advanced), React (Basic), Node (Basic), Rest API (Intermediate), CSS (Basic), JavaScript (Intermedate), Frontend Developer (React), Software Engineer, Software Engineer Intern',
+      category: 'Student',
+      url: 'https://www.hackerrank.com/profile/ccarrster'
+    },
+    {
+      start: new Date('2024-07-24'),
+      end: null,
+      name: 'W3 Schools Certified TypeScript Developer - Professional Level',
+      description: 'Certified TypeScript Developer - Professional Level',
+      category: 'Student',
+      url: 'https://verify.w3schools.com/1P181PB29D'
+    },
+    {
       start: new Date('2004-11-02'),
       end: new Date('2005-04-02'),
       name: '6th Dimension Devices - Coop',
